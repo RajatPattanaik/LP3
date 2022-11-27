@@ -16,13 +16,12 @@ def knapsack(w,arr):
             finalvalue += item.value * w/item.weight
             break
     return finalvalue
+ 
 
-if __name__ == "__main__":
+# Weight of Knapsack
+knapsack_weight = 50
+arr = [Item(60, 10), Item(100, 20), Item(120, 30)]
 
-	# Weight of Knapsack
-	knapsack_weight = 50
-	arr = [Item(60, 10), Item(100, 20), Item(120, 30)]
-
-	# Function call
-	max_val = knapsack(knapsack_weight, arr)
-	print ('Maximum value we can obtain = {}'.format(max_val))
+# Function call
+max_val = knapsack(knapsack_weight, arr)
+print ('Maximum value we can obtain = {}'.format(max_val))
