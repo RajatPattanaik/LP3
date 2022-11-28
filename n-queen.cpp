@@ -1,13 +1,16 @@
+// Time Complexity: O(N!)
+// Space Complexity: O(N2)
 #include <iostream>
 using namespace std;
 
 bool isSafe(int** arr, int x, int y, int n){
+    //along col
     for(int row=0; row<x; row++){
         if(arr[row][y] == 1){
             return false;
         }
     }
-
+    //along left diagonal
     int row = x;
     int col = y;
 
@@ -18,7 +21,7 @@ bool isSafe(int** arr, int x, int y, int n){
         row--;
         col--;
     }
-
+    //along right diagonal
     row = x;
     col = y;
 
@@ -45,7 +48,7 @@ bool nQueen(int** arr, int x, int n){
             if(nQueen(arr, x+1, n)){
                 return true;
             }
-            arr[x][col] = 0;
+            arr[x][col] = 0;  //backtracking
         }
     }
     return false;
